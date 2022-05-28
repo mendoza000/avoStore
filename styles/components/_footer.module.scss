@@ -1,0 +1,31 @@
+@import '@styles/base/settings';
+
+.footer__container{
+  box-shadow: 0 -0.1rem 0.5rem rgba(0, 0, 0, 0.1);
+  margin-top: 10rem;
+  padding: 4rem 3rem;
+}
+
+.footer__list{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2rem 4rem;
+
+  h4{
+    margin-bottom: 0.7rem;
+  }
+
+  a{
+    text-decoration: none;
+    color: rgb(112, 175, 237);
+  }
+}
+
+@media screen and (min-width: 600px){
+  .footer__list{
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

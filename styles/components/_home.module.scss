@@ -1,0 +1,23 @@
+@import '@styles/base/settings';
+
+.home__title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6rem 0;
+
+  span{
+    color: $primary-xo;
+  }
+}
+
+.home__avoList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 3rem 8rem;
+  max-width: 60rem;
+  margin-right: auto;
+  margin-left: auto;
+}
