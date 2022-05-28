@@ -1,5 +1,6 @@
 // import App from 'next/app'
-
+import { wrapper, store } from "../store/store";
+import { Provider } from "react-redux";
 import Layout from "@components/layaout/Layout";
 import "@styles/styles.scss";
 import "animate.css";
@@ -7,7 +8,9 @@ import "animate.css";
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </Layout>
   );
 }

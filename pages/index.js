@@ -34,7 +34,6 @@ const Home = () => {
 
       <div className="home__avoList">
         {productsList.map((avo) => {
-          console.log(avo);
           return <Card key={avo.id} {...avo} />;
         })}
       </div>
