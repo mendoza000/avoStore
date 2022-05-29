@@ -24,7 +24,7 @@ const ProductItem = () => {
   }
   
   return (
-    <div className="product__container">
+    <div className="product__container animate__animated animate__fadeIn animate__faster">
       <div className="product__header">
         <Image 
           className="product__image"
