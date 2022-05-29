@@ -5,7 +5,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <title>AvoStore</title>
-        <link rel="shortcut icon" href="@public/avoIcon.png" />
       </Head>
       <body>
         <Main />

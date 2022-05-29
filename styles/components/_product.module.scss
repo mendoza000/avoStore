@@ -1,0 +1,131 @@
+@import '@styles/base/settings';
+
+.product__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3rem;
+  max-width: 60rem;
+}
+.product__header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 0 5rem;
+}
+.product__header-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.product__sub{
+  display: flex;
+  align-items: center;
+  width: 27rem;
+  margin-top: 1rem;
+}
+.product__code,
+.product__price{
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  margin-left: auto;
+  text-align: center;
+  width: 9rem;
+}
+.product__code{
+  background-color: rgba($color: #000000, $alpha: 0.2);
+}
+.product__price{
+  margin-right: auto;
+  margin-left: 0rem;
+  background-color: rgba($color: $primary-o, $alpha: 0.4);
+}
+.product__add{
+  display: grid;
+  width: 27rem;
+  grid-template-columns: 60% 40%;
+  margin-top: 2rem;
+  border-radius: 0.7rem;
+  box-shadow: 0px 0px 0rem 0.2rem rgba($color: $primary-o, $alpha: 1), 0px 0.5rem 1rem rgba(0,0,0,0.3);
+
+  input, button{
+    border: none;
+    background-color: transparent;
+    padding: 1rem 0.5rem;
+  }
+
+  input{
+    padding: 1rem 1rem;
+    outline: none;
+  }
+
+  button{
+    background-color: $primary-o;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.product__description{
+  margin-top: 4rem;
+
+  .product__description-title{
+    margin-bottom: 1rem;
+  }
+}
+
+.product__table{
+  margin-top: 4rem;
+  width: 100%;
+  outline: $primary-o 1px solid;
+  border-radius: 0.7rem;
+  border: none;
+  text-align: left;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: transparent;
+
+  th, th{
+    padding: 2rem 1.5rem;
+  }
+}
+
+.product__table-header{
+  text-align: left;
+  background: $primary;
+  
+  thead, th, td{
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem
+  }
+}
+
+.product__table-item{
+  th, td{
+    outline: $primary-o 1px solid;
+    font-weight: normal;
+  }
+
+  &:last-child{
+    th, td{
+      &:first-child{
+        border-bottom-left-radius: 0.7rem;
+      }
+      &:last-child{
+        border-bottom-right-radius: 0.7rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .product__container{
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
