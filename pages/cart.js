@@ -12,7 +12,7 @@ const cart = () => {
       <div className="ui__divider"></div>
 
       <div className="cart__subtotal">
-        <h4>Subtotal: {cart.total}$</h4>
+        <h4>Subtotal: {cart.total.toFixed(2)}$</h4>
         <button>Checkout</button>
       </div>
     </div>
