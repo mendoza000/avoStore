@@ -1,0 +1,69 @@
+@import '@styles/base/settings';
+
+.yesornot__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.yesornot__title{
+  color: $primary-xo;
+  font-size: 7rem;
+  transition: color .3s;
+}
+.yesornot__title-loading{
+  color: #9f9f9f
+}
+.yesornot__button{
+  padding: 0.7rem 1.7rem ;
+  border-radius: 0.4rem;
+  border: none;
+  outline: none;
+  background-color: rgba($color: $primary-xo, $alpha: 0.5);
+  border: 2px solid rgba($color: $primary-xo, $alpha: .7);
+  font-weight: bolder;
+  transition: background-color .3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: $font-color;
+
+  &:hover{
+    background-color: rgba($color: $primary-xo, $alpha: 0.7);
+  }
+}
+.yesornot__button-loading{
+  background-color: #9f9f9f;
+
+  &:hover{
+    background-color: #9f9f9f;
+  }
+}
+@keyframes rotateLoader {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.yesornot__button-icon{
+  fill: $font-color;
+  height: 2rem;
+  width: 2rem;
+  animation-name: rotateLoader;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.yesornot__return{
+  color: $font-color;
+  font-size: 1.4rem;
+  margin-top: 3rem;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0.4rem 1.4rem ;
+  border-bottom: 2px solid $primary-xo;
+  text-decoration: none;
+}

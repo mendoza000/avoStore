@@ -1,5 +1,10 @@
 @import '@styles/base/settings';
 
+.ui__container{
+  margin: 3rem 3rem;
+  max-width: 65rem;
+  min-height: 43vh;
+}
 .ui__navmenu{
   display: flex;
   justify-content: space-around;

@@ -4,6 +4,7 @@ import avoIcon from "@public/images/avoIcon.png";
 import Card from "@components/Card";
 import { useSelector } from "react-redux";
 import { getProducts } from "helpers/getProducts";
+import Link from "next/link";
 
 const Home = () => {
   const products = useSelector((state) => state.products?.products);
@@ -25,6 +26,10 @@ const Home = () => {
         />
         <span>Store</span>
       </h1>
+
+      <Link href={"/yesornot"}>
+        <a className="home__subtitle">¿Deberia comer Aguacate hoy?</a>
+      </Link>
 
       <div className="home__avoList">
         {products.map((avo) => {
