@@ -7,11 +7,13 @@ import "animate.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <>
       <Provider store={store}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Provider>
-    </Layout>
+    </>
   );
 }
 

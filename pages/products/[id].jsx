@@ -1,11 +1,13 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {BsFillCartPlusFill} from 'react-icons/bs'
 import { getProducts } from "helpers/getProducts";
+import { cartAddItem } from "store/actions/cart.actions";
 
 const ProductItem = () => {
+  const dispatch = useDispatch()
   const [countAvos, setCountAvos] = useState(1);
   getProducts()
   const products = useSelector((state) => state.products?.products);
@@ -21,6 +23,14 @@ const ProductItem = () => {
   const handleAddAvo = (e) => {
     const target = e.target 
     setCountAvos(parseInt(target.value))
+  }
+
+  const handleAddToCart = (e) => {
+    e.preventDefault()
+    dispatch(cartAddItem({
+      avo,
+      count: countAvos
+    }))
   }
   
   return (
@@ -43,9 +53,9 @@ const ProductItem = () => {
             <span className="product__code">{avo?.sku}</span>
           </p>
 
-          <form className="product__add">
+          <form className="product__add" onSubmit={handleAddToCart}>
             <input type="number" value={countAvos} onChange={handleAddAvo}/>
-            <button>
+            <button type="submit">
               <BsFillCartPlusFill/>
               Add to cart
             </button>
@@ -64,18 +74,20 @@ const ProductItem = () => {
             <th colSpan={2}>Attributes</th>
           </tr>
         </thead>
-        <tr className="product__table-item">
-          <th>Shape</th>
-          <th>{avo?.attributes?.shape}</th>
-        </tr>
-        <tr className="product__table-item">
-          <th>Hardiness</th>
-          <th>{avo?.attributes?.hardiness}</th>
-        </tr>
-        <tr className="product__table-item">
-          <th>Taste</th>
-          <th>{avo?.attributes?.taste}</th>
-        </tr>
+        <tbody>
+          <tr className="product__table-item">
+            <th>Shape</th>
+            <th>{avo?.attributes?.shape}</th>
+          </tr>
+          <tr className="product__table-item">
+            <th>Hardiness</th>
+            <th>{avo?.attributes?.hardiness}</th>
+          </tr>
+          <tr className="product__table-item">
+            <th>Taste</th>
+            <th>{avo?.attributes?.taste}</th>
+          </tr>
+        </tbody>
       </table>
     </div>
   );
