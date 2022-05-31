@@ -1,15 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import avoIcon from "@public/images/avoIcon.png";
 import Card from "@components/Card";
-import { useSelector } from "react-redux";
-import { getProducts } from "helpers/getProducts";
 import Link from "next/link";
+import { getProducts } from "helpers/getProducts";
 
-const Home = () => {
-  const products = useSelector((state) => state.products?.products);
+const Home = ({ products }) => {
   getProducts();
-
   const handleClickAvo = (e) => {
     const target = e.target;
   };
@@ -32,12 +29,22 @@ const Home = () => {
       </Link>
 
       <div className="home__avoList">
-        {products.map((avo) => {
+        {products.avos.map((avo) => {
           return <Card key={avo.id} {...avo} />;
         })}
       </div>
     </div>
   );
+};
+
+export const getStaticProps = async (ctx) => {
+  const resp = await fetch("https://avostore000.vercel.app/api/avo");
+  const products = await resp.json();
+  return {
+    props: {
+      products,
+    },
+  };
 };
 
 export default Home;

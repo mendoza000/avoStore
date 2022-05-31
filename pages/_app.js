@@ -5,6 +5,11 @@ import Layout from "@components/layaout/Layout";
 import "@styles/styles.scss";
 import "animate.css";
 
+// export function reportWebVitals(metric) {
+//   // These metrics can be sent to any analytics service
+//   console.log(metric);
+// }
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
